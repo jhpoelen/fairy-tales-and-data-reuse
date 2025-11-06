@@ -32,7 +32,7 @@ CC BY 4.0. For license text, see [https://creativecommons.org/licenses/by/4.0/](
 
 ---
 
-## Guiding Questions
+## Guiding Question
 
 ### How do *you* keep our Digital Biodiversity Data around? 
 
@@ -211,7 +211,7 @@ For questions/comments/ideas, please do reach out to:
 
 [https://orcid.org/0000-0003-3138-4118](https://orcid.org/0000-0003-3138-4118)
 
-## Guiding Questions
+## Guiding Question
 
 ### How do *you* keep our Digital Biodiversity Data around? 
 
