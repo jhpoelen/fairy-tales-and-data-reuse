@@ -34,11 +34,11 @@ CC BY 4.0. For license text, see [https://creativecommons.org/licenses/by/4.0/](
 
 ## Guiding Questions
 
-### How to keep our Digital Biodiversity Data around? 
+### How do *you* keep our Digital Biodiversity Data around? 
 
-### How to make best use of our (past, present, future) digital research data? 
+### How do *you* make use of our (past, present, future) digital research data? 
 
-### What is **one** of **your** experiences that comes to mind in which digital data played a *not* so beneficial role in a transnational, multi-institutional, collaborative research community? Share your horror story!
+### What is *one* of *your* experiences that comes to mind in which digital data played a *not* so beneficial role in a transnational, multi-institutional, collaborative research community? Share your horror story!
 
 ## Digital Data on the Internet are Ephemeral
 
@@ -179,97 +179,21 @@ Step 4. Use the signed citation of the data bill of material (DataBoM) in your r
 
 Step 5. Continuously monitor the availability of the DataBoM and the associated data.
 
-## Example 1: DataBoM for iDigBio Data Registry
-
-Create an iDigBio Data Bill of Materials by capturing their registered datasets, and describing their origins, 
-
-```
-(iDigBio Registry with Institutional DwC-A Data URLs) 
-  -[:take snapshot and download DwC-As]
-     ->(DataBoM + DwC-A files) 
-``` 
-
-using the following Preston ^[https://github.com/bio-guoda/preston] command 
-
-```
-preston track --seed https://idigbio.org
-```
-
-## Data Bill of Material (DataBoM) in English
-
-Expressing the digital content and their origin of the DataBoM in "plain" English:
-
-*"A version of the iDigBio registry was downloaded on 2025-10-01 from <...idigbio.org/v2/search...> with content signature <hash://sha256/52d6...>. This iDigBio registry version had member dataset <urn:uuid:650...> associated with <.../UCSB-IZC_DwC-A.zip> . And this DwC-A URL had content signature <hash://sha256/3d4e...> as seen on 2025-10-01."*
-
-## Data Bill of Material (DataBoM) in rdf/nquads
-
-or, made more machine readable using Provenance Ontology ^[https://www.w3.org/TR/prov-o/] and Hash URIs ^[Elliot et al. 2023. Sci Data. [doi:10.1038/s41597-023-02230-y](https://doi.org/10.1038/s41597-023-02230-y)] as expressed in rdf/nquads:
-
-```
-<...idigbio.org/v2/search...> 
-  <hasVersion> 
-    <hash://sha256/52d6...> .
-<hash://sha256/52d6...> 
-  <hadMember> 
-    <urn:uuid:650...> .
-<urn:uuid:650...> 
-  <hadMember> 
-    <.../UCSB-IZC_DwC-A.zip> .
-<.../UCSB-IZC_DwC-A.zip> 
-  <hasVersion> 
-    <hash://sha256/3d4e...> .
-```
-
-## DataBoM Binds Data Together
-
-As a text file, the DataBoM has a content signature that uniquely identifies the digital bound collection of signed data it references.
-
-So, retrieval method for data bundle defined by DataBoM with signature X is:
-
-1. get the DataBoM by their signature X.
-3. get data listed in DataBoM by their signatures.
-
-Note that we are asking for the data content, not the data location. Also, content signatures are format agnostic, so any content (of any size) can be included.
-
-## DataBoM Binds Data Together
-
-
-Here's a retrieval method for the first DwC record in the data bundle defined by DataBoM with a sha256 signature starting with 40c4... as **expressed in a bash script**.
-
-```
-preston cat\
- --remote https://linker.bio \
- hash://sha256/40c44d75d243e\
-8d1fde2376483637df6f96bfe182\
-bb4bcd119cb5311cfdbc000 \
- | preston dwc-stream \
-  --remote https://linker.bio \
- | head -1
-```
-
-producing the first record as _Saara hardiwicki_,  a lizard specimen from Pakistan from Museo de Zoología, Universidad de Puerto Rico, Río Piedras (UPRRP:MZUPRRP).
-
-## We found a lizard specimen from Pakistan in a Puerto Rican Collection!
-
-![](img/lizard-from-pakistan-MZUPRRP-R-000001.png)
-
-## DataBoM Flexibility
-
-Data Bill of Materials (DataBoMs)
-
-1. ... can reference other DataBoMs, including older versions of a DataBoM.
-2. ... can be tiny or super huge
-3. ... allow for arbitrarily detailed description of data provenance in natural language or using structured text like rdf/nquads in combation with the provenance ontology.
-
-With this, DataBoMs are a recursive data structure allowed to grow to arbitrary size. 
-
-## Examples 2. and 3. — More Existing DataBoMs
+## Existing DataBoMs
 
 ### >300k Digitized Biodiversity Heritage Literature Items
 Poelen, J. H., & Agosti, D. (2025). A Versioned Literature Corpus derived from Biodiversity Heritage Library hash://md5/b3cd9de0685deeebf57a5d225e59c10f (0.3) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.16616872
 
 ### Darwin Core Archives Associated with scan-bugs.org
 Elton, Nomer, & Preston. (2025). Versioned Archive and Review of Biotic Interactions and Taxon Names Found within globalbioticinteractions/scan hash://md5/58de50154e330c331993fe5d0852ad84. Zenodo. https://doi.org/10.5281/zenodo.16894884
+
+## How to keep our Digital Biodiversity Data around? 
+
+I've been using this Data Bill of Materials approach to track terrabytes of biodiversity data since Sept 2018, keeping identical copies across independent storage locations, and reusing their content.
+
+For examples and recorded presentation, see: 
+
+Poelen, J. H., & Seltmann, K. C. (2025, October 23). Book Binding for the Digital Age hash://md5/097a516df8d5eb03aadcaeed942e557b. Datos Vivos/Living Data 2025, Bogotá, Colombia. Zenodo. https://doi.org/10.5281/zenodo.17392711 a presentation as part of the Datos Vivos conference in Bogotá, Colombia 21-24 Oct 2025.
 
 ## Who or what keeps our Digital Biodiversity Data around? 
 
@@ -278,13 +202,6 @@ a) ~~the Data Fairy~~
 b) **Awareness of the fragility of digital data.**
 
 c) **Common sense data archiving and citation practices.**
-
-
-## How to keep our Digital Biodiversity Data around? 
-
-I've been using this Data Bill of Materials approach to track terrabytes of biodiversity data since Sept 2018, keeping identical copies across independent storage locations, and reusing their content.
-
-### How do *you* intend keep our digital heritage around? 
 
 ## And Remember
 
@@ -306,8 +223,9 @@ For questions/comments/ideas, please do reach out to:
 
 ## Guiding Questions
 
-### How to keep our Digital Biodiversity Data around? 
+### How do *you* keep our Digital Biodiversity Data around? 
 
-### How to make best use of our (past, present, future) digital research data? 
+### How do *you* make use of our (past, present, future) digital research data? 
 
-### What is **one** of **your** experiences that comes to mind in which digital data played a *not* so beneficial role in a transnational, multi-institutional, collaborative research community? Share your horror story!
+### What is *one* of *your* experiences that comes to mind in which digital data played a *not* so beneficial role in a transnational, multi-institutional, collaborative research community? Share your horror story!
+

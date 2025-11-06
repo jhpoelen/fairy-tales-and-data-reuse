@@ -200,18 +200,18 @@ href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/
 <p><img src="img/cc-by.png" /></p>
 <hr />
 <h2 id="guiding-questions">Guiding Questions</h2>
-<h3 id="how-to-keep-our-digital-biodiversity-data-around">How to keep
-our Digital Biodiversity Data around?</h3>
+<h3 id="how-do-you-keep-our-digital-biodiversity-data-around">How do
+<em>you</em> keep our Digital Biodiversity Data around?</h3>
 <h3
-id="how-to-make-best-use-of-our-past-present-future-digital-research-data">How
-to make best use of our (past, present, future) digital research
+id="how-do-you-make-use-of-our-past-present-future-digital-research-data">How
+do <em>you</em> make use of our (past, present, future) digital research
 data?</h3>
 <h3
 id="what-is-one-of-your-experiences-that-comes-to-mind-in-which-digital-data-played-a-not-so-beneficial-role-in-a-transnational-multi-institutional-collaborative-research-community-share-your-horror-story">What
-is <strong>one</strong> of <strong>your</strong> experiences that comes
-to mind in which digital data played a <em>not</em> so beneficial role
-in a transnational, multi-institutional, collaborative research
-community? Share your horror story!</h3>
+is <em>one</em> of <em>your</em> experiences that comes to mind in which
+digital data played a <em>not</em> so beneficial role in a
+transnational, multi-institutional, collaborative research community?
+Share your horror story!</h3>
 <h2 id="digital-data-on-the-internet-are-ephemeral">Digital Data on the
 Internet are Ephemeral</h2>
 <blockquote>
@@ -399,92 +399,7 @@ role="doc-noteref"><sup>8</sup></a>.</p>
 (DataBoM) in your research.</p>
 <p>Step 5. Continuously monitor the availability of the DataBoM and the
 associated data.</p>
-<h2 id="example-1-databom-for-idigbio-data-registry">Example 1: DataBoM
-for iDigBio Data Registry</h2>
-<p>Create an iDigBio Data Bill of Materials by capturing their
-registered datasets, and describing their origins,</p>
-<pre><code>(iDigBio Registry with Institutional DwC-A Data URLs) 
-  -[:take snapshot and download DwC-As]
-     -&gt;(DataBoM + DwC-A files) </code></pre>
-<p>using the following Preston <a href="#fn9" class="footnote-ref"
-id="fnref9" role="doc-noteref"><sup>9</sup></a> command</p>
-<pre><code>preston track --seed https://idigbio.org</code></pre>
-<h2 id="data-bill-of-material-databom-in-english">Data Bill of Material
-(DataBoM) in English</h2>
-<p>Expressing the digital content and their origin of the DataBoM in
-“plain” English:</p>
-<p><em>“A version of the iDigBio registry was downloaded on 2025-10-01
-from &lt;…idigbio.org/v2/search…&gt; with content signature
-&lt;hash://sha256/52d6…&gt;. This iDigBio registry version had member
-dataset <a href="urn:uuid:650..." class="uri">urn:uuid:650...</a>
-associated with &lt;…/UCSB-IZC_DwC-A.zip&gt; . And this DwC-A URL had
-content signature &lt;hash://sha256/3d4e…&gt; as seen on
-2025-10-01.”</em></p>
-<h2 id="data-bill-of-material-databom-in-rdfnquads">Data Bill of
-Material (DataBoM) in rdf/nquads</h2>
-<p>or, made more machine readable using Provenance Ontology <a
-href="#fn10" class="footnote-ref" id="fnref10"
-role="doc-noteref"><sup>10</sup></a> and Hash URIs <a href="#fn11"
-class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>
-as expressed in rdf/nquads:</p>
-<pre><code>&lt;...idigbio.org/v2/search...&gt; 
-  &lt;hasVersion&gt; 
-    &lt;hash://sha256/52d6...&gt; .
-&lt;hash://sha256/52d6...&gt; 
-  &lt;hadMember&gt; 
-    &lt;urn:uuid:650...&gt; .
-&lt;urn:uuid:650...&gt; 
-  &lt;hadMember&gt; 
-    &lt;.../UCSB-IZC_DwC-A.zip&gt; .
-&lt;.../UCSB-IZC_DwC-A.zip&gt; 
-  &lt;hasVersion&gt; 
-    &lt;hash://sha256/3d4e...&gt; .</code></pre>
-<h2 id="databom-binds-data-together">DataBoM Binds Data Together</h2>
-<p>As a text file, the DataBoM has a content signature that uniquely
-identifies the digital bound collection of signed data it
-references.</p>
-<p>So, retrieval method for data bundle defined by DataBoM with
-signature X is:</p>
-<ol type="1">
-<li>get the DataBoM by their signature X.</li>
-<li>get data listed in DataBoM by their signatures.</li>
-</ol>
-<p>Note that we are asking for the data content, not the data location.
-Also, content signatures are format agnostic, so any content (of any
-size) can be included.</p>
-<h2 id="databom-binds-data-together-1">DataBoM Binds Data Together</h2>
-<p>Here’s a retrieval method for the first DwC record in the data bundle
-defined by DataBoM with a sha256 signature starting with 40c4… as
-<strong>expressed in a bash script</strong>.</p>
-<pre><code>preston cat\
- --remote https://linker.bio \
- hash://sha256/40c44d75d243e\
-8d1fde2376483637df6f96bfe182\
-bb4bcd119cb5311cfdbc000 \
- | preston dwc-stream \
-  --remote https://linker.bio \
- | head -1</code></pre>
-<p>producing the first record as <em>Saara hardiwicki</em>, a lizard
-specimen from Pakistan from Museo de Zoología, Universidad de Puerto
-Rico, Río Piedras (UPRRP:MZUPRRP).</p>
-<h2
-id="we-found-a-lizard-specimen-from-pakistan-in-a-puerto-rican-collection">We
-found a lizard specimen from Pakistan in a Puerto Rican Collection!</h2>
-<p><img src="img/lizard-from-pakistan-MZUPRRP-R-000001.png" /></p>
-<h2 id="databom-flexibility">DataBoM Flexibility</h2>
-<p>Data Bill of Materials (DataBoMs)</p>
-<ol type="1">
-<li>… can reference other DataBoMs, including older versions of a
-DataBoM.</li>
-<li>… can be tiny or super huge</li>
-<li>… allow for arbitrarily detailed description of data provenance in
-natural language or using structured text like rdf/nquads in combation
-with the provenance ontology.</li>
-</ol>
-<p>With this, DataBoMs are a recursive data structure allowed to grow to
-arbitrary size.</p>
-<h2 id="examples-2.-and-3.-more-existing-databoms">Examples 2. and 3. —
-More Existing DataBoMs</h2>
+<h2 id="existing-databoms">Existing DataBoMs</h2>
 <h3 id="k-digitized-biodiversity-heritage-literature-items">&gt;300k
 Digitized Biodiversity Heritage Literature Items</h3>
 <p>Poelen, J. H., &amp; Agosti, D. (2025). A Versioned Literature Corpus
@@ -498,6 +413,18 @@ Biotic Interactions and Taxon Names Found within
 globalbioticinteractions/scan
 hash://md5/58de50154e330c331993fe5d0852ad84. Zenodo.
 https://doi.org/10.5281/zenodo.16894884</p>
+<h2 id="how-to-keep-our-digital-biodiversity-data-around">How to keep
+our Digital Biodiversity Data around?</h2>
+<p>I’ve been using this Data Bill of Materials approach to track
+terrabytes of biodiversity data since Sept 2018, keeping identical
+copies across independent storage locations, and reusing their
+content.</p>
+<p>For examples and recorded presentation, see:</p>
+<p>Poelen, J. H., &amp; Seltmann, K. C. (2025, October 23). Book Binding
+for the Digital Age hash://md5/097a516df8d5eb03aadcaeed942e557b. Datos
+Vivos/Living Data 2025, Bogotá, Colombia. Zenodo.
+https://doi.org/10.5281/zenodo.17392711 a presentation as part of the
+Datos Vivos conference in Bogotá, Colombia 21-24 Oct 2025.</p>
 <h2 id="who-or-what-keeps-our-digital-biodiversity-data-around-4">Who or
 what keeps our Digital Biodiversity Data around?</h2>
 <ol type="a">
@@ -507,14 +434,6 @@ data.</strong></p></li>
 <li><p><strong>Common sense data archiving and citation
 practices.</strong></p></li>
 </ol>
-<h2 id="how-to-keep-our-digital-biodiversity-data-around-1">How to keep
-our Digital Biodiversity Data around?</h2>
-<p>I’ve been using this Data Bill of Materials approach to track
-terrabytes of biodiversity data since Sept 2018, keeping identical
-copies across independent storage locations, and reusing their
-content.</p>
-<h3 id="how-do-you-intend-keep-our-digital-heritage-around">How do
-<em>you</em> intend keep our digital heritage around?</h3>
 <h2 id="and-remember">And Remember</h2>
 <p><img src="img/archiving-fairy-yard.jpeg" /></p>
 <h2 id="thank-you">Thank you!</h2>
@@ -533,18 +452,18 @@ href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1839201">OAC
 <p><a
 href="https://orcid.org/0000-0003-3138-4118">https://orcid.org/0000-0003-3138-4118</a></p>
 <h2 id="guiding-questions-1">Guiding Questions</h2>
-<h3 id="how-to-keep-our-digital-biodiversity-data-around-2">How to keep
-our Digital Biodiversity Data around?</h3>
+<h3 id="how-do-you-keep-our-digital-biodiversity-data-around-1">How do
+<em>you</em> keep our Digital Biodiversity Data around?</h3>
 <h3
-id="how-to-make-best-use-of-our-past-present-future-digital-research-data-1">How
-to make best use of our (past, present, future) digital research
+id="how-do-you-make-use-of-our-past-present-future-digital-research-data-1">How
+do <em>you</em> make use of our (past, present, future) digital research
 data?</h3>
 <h3
 id="what-is-one-of-your-experiences-that-comes-to-mind-in-which-digital-data-played-a-not-so-beneficial-role-in-a-transnational-multi-institutional-collaborative-research-community-share-your-horror-story-1">What
-is <strong>one</strong> of <strong>your</strong> experiences that comes
-to mind in which digital data played a <em>not</em> so beneficial role
-in a transnational, multi-institutional, collaborative research
-community? Share your horror story!</h3>
+is <em>one</em> of <em>your</em> experiences that comes to mind in which
+digital data played a <em>not</em> so beneficial role in a
+transnational, multi-institutional, collaborative research community?
+Share your horror story!</h3>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
@@ -573,13 +492,6 @@ href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn8"><p>Elliott et al. 2023. Sci Data. <a
 href="https://doi.org/10.1038/s41597-023-02230-y">doi:10.1038/s41597-023-02230-y</a><a
 href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>https://github.com/bio-guoda/preston<a href="#fnref9"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>https://www.w3.org/TR/prov-o/<a href="#fnref10"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p>Elliot et al. 2023. Sci Data. <a
-href="https://doi.org/10.1038/s41597-023-02230-y">doi:10.1038/s41597-023-02230-y</a><a
-href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 </body>
