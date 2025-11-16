@@ -1,7 +1,7 @@
 ---
 author:
  - Jorrit H. Poelen
-title: "(DRAFT) Fairy Tales and Digital Research Data"
+title: "Fairy Tales and Digital Research Data"
 date: 2025-11-17
 aspectratio: 169
 ---
@@ -22,7 +22,7 @@ Poelen, J. H., & Seltmann, K. C. (2025, October 23). Book Binding for the Digita
 
 ### Cite As
 
-Poelen, J.H. (2025) Fairy Tales and Digital Research Data. Zenodo. [https://doi.org/10.5281/zenodo.](https://doi.org/10.5281/zenodo.)
+Poelen, J.H. (2025) Fairy Tales and Digital Research Data. Zenodo. [https://doi.org/10.5281/zenodo.17623430](https://doi.org/10.5281/zenodo.17623430)
 
 ### License
 
