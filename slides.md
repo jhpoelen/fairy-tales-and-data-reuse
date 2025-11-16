@@ -8,7 +8,7 @@ aspectratio: 169
 
 ![](img/propollsoil.svg){ height=20% }
 
-Presented at the 17-19 Nov 2025 kick-off meeting in Freisingen, Germany of
+Presented at the 17-19 Nov 2025 kick-off meeting in Freising, Germany of
 the EU Horizon's [ProPollSoil](https://propollsoil.eu/) project "Understanding and managing soil health impacts to protect soil-dependent pollinators" [https://doi.org/10.3030/101219108](https://doi.org/10.3030/101219108).
 
 ---
