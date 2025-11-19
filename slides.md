@@ -108,15 +108,16 @@ GBIF Secretariat cannot guarantee the quality or completeness of data, **nor doe
 
 ## Recent Reminders of FAIR Data Fairy Absence
 
- * Despite a massive digitization effort, massive amounts of valuable knowledge remains jailed in pdfs or other hard-to-reuse data formats. Plazi is an effort to open up access to structured biodiversity data knowledge.
- * Despite the rise of data publication mechanisms through data appendices and dedicated peer-reviewed data journals, digital data remains hard to reuse. 
- * Despite the increase support and adoption of open access and FAIR principles, ...].  
- * difficulties in Name alignment taxonomic name integration 
- * alignment of date / geolocation with readily available  
- * reuse of readily available datasets through 
- * resolving of provenance reference citation 
- * difficulties of sharing specific versions of datasets
- * difficulties of gathering constructive feedback in diverse/cross-displinary research communities
+Scholarly data...
+
+ * cannot be found because it is left unpublished on a personal laptop or desk drawer 
+ * cannot be accessed due to "data available on request" of retired/deceased author
+ * is lost due to malicious activity (e.g., hacking, ransonware) or human error (oops!)
+ * is published using custom schemas instead of schemas used by others
+ * is published in proprietary or machine unfriendly file formats (e.g., xlsx, docx, pdf)
+ * is riddled with data inconsistencies and typos
+ * cannot be easily reused/linked/integrated with other datasets/projects
+ * are effectively excluded during peer review process due to time constraints
 
 ## Who or what keeps our Digital Biodiversity Data reusable? 
 
@@ -170,19 +171,58 @@ Typically, scholarly journals employ a peer review process to select scholarly w
 
 ## Steps to Reviewing Digital Data
 
-Step 1. Update and share your data early and often, ideally using *versioned* copies of digital data referenced by **signed** citations ^[Elliott et al. 2023. Sci Data. [doi:10.1038/s41597-023-02230-y](https://doi.org/10.1038/s41597-023-02230-y)].
+To enable the discovery of existing species interaction datasets, Global Biotic Interactions (GloBI) continuously tracks existing datasets and integrates the discovered interaction records. These integrated interaction records form the basis of the GloBI’s interpreted interaction data. ^[https://globalbioticinteractions.org/process accessed on 2025-11-19]
 
-Step 2. Ask friends and family (e.g., close collaborators) to review/reuse a specific version of your data. Repeat step 1.
+Step 1. _automatically_ discover species interaction datasets
 
-Step 3. Ask consortium members to review/reuse a specific version of your data. Repeat steps 1-2.
+Step 2. _automatically_ *access* up-to-date datasets and versioned them
 
-Step 4. Ask external members to review and *reuse* early versions of your data. Repeat steps 1-3. 
+Step 3. _automatically_ *parse* data and link/integrate with other datasets (e.g., taxonomic resources) 
 
-Step 5. Register your data with data registries/journals, track reuse and gather (automated?) feedback. Repeat steps 1-5. 
+Step 4. _automatically_ *produce* derived data products and data services, including GloBI data reviews.
 
-Step 6. Register your data with data journals and gather to review and *reuse* early versions of your data. Repeat steps 1-3. 
+Step 5. _automatically_ *publish* derived datasets and associated GloBI data reviews
 
-Step 7. Repeat steps 1-6 until you retire your data.
+Step 6. _semi-manual_ solicit feedback and encourage discussion through open access and 
+
+Step 7. repeat continuously until (not yet planned) retirement
+
+## Steps to Reviewing Digital Data: Example
+
+![A spinose ear tick (Otobius megnini) a mammalian parasites (Lindström, A. 2017).  from: Fowler, S. 2020. Extracting Parasite Interaction Data from a Scientific Paper using Google Sheets. Accessed on 2025-11-19 on [https://www.globalbioticinteractions.org/2020/08/25/extracting-parasite-interaction-data/](https://www.globalbioticinteractions.org/2020/08/25/extracting-parasite-interaction-data/)](img/fowler-figure2.jpg){ height=66% }
+
+## Steps to Reviewing Digital Data: Example
+
+![An example of the Google Sheets spreadsheet used for transcribing data. GloBI accessed the transcribed data set through open source scripts accessible on GitHub. Once every other day the data was indexed into GloBI data products. ([Fowler, S. 2020](https://www.globalbioticinteractions.org/2020/08/25/extracting-parasite-interaction-data/))](img/fowler-figure1.png){ height=66% } 
+
+## Steps to Reviewing Digital Data: Example
+
+![Elton, Nomer, & Preston. (2025). Versioned Archive and Review of Biotic Interactions and Taxon Names Found within globalbioticinteractions/light2019 hash://md5/c9dad8bc30bcac362bcb8116444af31d. Zenodo. [doi:10.5281/zenodo.16416949](https://doi.org/10.5281/zenodo.16416949)](img/light2019-globi-review-zenodo.png){ height=66% } 
+
+## Steps to Reviewing Digital Data: Example
+
+![GloBI interactive search results as accessed on 2025-11-19 via [https://www.globalbioticinteractions.org](https://www.globalbioticinteractions.org?accordingTo=globi%3Aglobalbioticinteractions%2Flight2019)](img/light2019-globi-search.png){ height=66% }
+
+## Steps to Reviewing Digital Data: Example
+
+![GloBI interactive search results as accessed on 2025-11-19 via [https://www.globalbioticinteractions.org](https://www.globalbioticinteractions.org/browse/?accordingTo=globi%3Aglobalbioticinteractions%2Flight2019)](img/light2019-globi-network.png){ height=66% }
+
+
+## Steps to Reviewing Digital Data: Example
+
+Step 1. use Elton ^[For review robots description see: https://globalbioticinteractions.org/process] to discover dataset metadata at https://github.com/globalbioticinteractions/light2019 
+
+Step 2. use Elton to access and version csv file available through [Google Sheet 1Fo...DxY](https://docs.google.com/spreadsheets/u/0/d/1FoGhyDoPlPa7FHyUZO8VEvLdLkoJB84H2f7sgXPFDxY/export?format=csv) 
+
+Step 3. use Elton and Nomer to align taxonomic names with NCBI taxonomy, Catalogue of Life etc.
+
+Step 4. use Elton, Nomer, pandoc to produce derived datasets and a data review. 
+
+Step 5. use Preston to *publish* derived datasets and associated GloBI data review to Zenodo.
+
+Step 6. _semi-manual_ solicit feedback and encourage discussion through email, meetings and open data platforms
+
+Step 7. repeat continuously until (not yet planned) retirement
 
 ## Who or what keeps our Digital Biodiversity Data around? 
 
