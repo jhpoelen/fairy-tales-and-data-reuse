@@ -1,7 +1,7 @@
 ---
 author:
  - Jorrit H. Poelen
-title: "(DRAFT) Fairy Tales and Data Reuse"
+title: "Fairy Tales and Data Reuse"
 date: 2025-11-19
 aspectratio: 169
 ---
@@ -179,7 +179,7 @@ Step 2. _automatically_ *access* up-to-date datasets and versioned them
 
 Step 3. _automatically_ *parse* data and link/integrate with other datasets (e.g., taxonomic resources) 
 
-Step 4. _automatically_ *produce* derived data products and data services, including GloBI data reviews.
+Step 4. _automatically_ *produce* derived data products and data services
 
 Step 5. _automatically_ *publish* derived datasets and associated GloBI data reviews
 
