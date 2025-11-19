@@ -21,7 +21,7 @@ Poelen, J.H. (2025) Fairy Tales and Digital Research Data. hash://md5/74cabb19c6
 
 ### Cite As
 
-Poelen, J.H. (2025) Fairy Tales and Data Reuse. Zenodo. [https://doi.org/10.5281/zenodo.](https://doi.org/10.5281/zenodo.)
+Poelen, J.H. (2025) Fairy Tales and Data Reuse. Zenodo. [https://doi.org/10.5281/zenodo.17646740](https://doi.org/10.5281/zenodo.17646740)
 
 ### License
 
